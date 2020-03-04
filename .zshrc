@@ -28,6 +28,8 @@ source $ZSH/oh-my-zsh.sh
 ## ALIAS
 alias c="clear"
 alias ez="vi $HOME/.zshrc"
+# Share screen with VLC to Google Meet
+alias meet="vlc --no-video-deco --no-embedded-video --screen-fps=30 --screen-top=32  --screen-left=0  --screen-width=1920  --screen-height=1000  screen://"
 
 ## GIT
 GIT_AUTHOR_NAME="Chavita1386"
@@ -84,3 +86,4 @@ function gcn {
     cd $reponame;
     npm install;
 }
+
