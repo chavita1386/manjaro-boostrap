@@ -29,6 +29,8 @@ source $ZSH/oh-my-zsh.sh
 alias c="clear"
 alias ez="vi $HOME/.zshrc"
 # Share screen with VLC to Google Meet
+# [ 0,    0, 1920, 1080] for my entire left screen
+# [ 0, 1920, 1920, 1080] for my entire right screen
 alias meet="vlc --no-video-deco --no-embedded-video --screen-fps=30 --screen-top=32  --screen-left=0  --screen-width=1920  --screen-height=1000  screen://"
 
 ## GIT
