@@ -31,3 +31,4 @@ source ~/.profile
 
 # set default github .zshrc file
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/chavita1386/manjaro-boostrap/master/.zshrc
+ 
