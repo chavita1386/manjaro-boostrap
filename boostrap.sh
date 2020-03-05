@@ -14,8 +14,7 @@ git clone https://github.com/djui/alias-tips.git $HOME/.oh-my-zsh/custom/plugins
 yes | pacman -S jdk11-openjdk nodejs npm go 
 
 # FONTS powerline and fira code
-yes | pacman -S powerline-fonts
-yes | pacman -S ttf-fira-code
+yes | pacman -S powerline-fonts ttf-fira-code
 
 # setup dev env
 mkdir -p $HOME/code
