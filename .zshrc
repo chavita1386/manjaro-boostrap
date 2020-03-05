@@ -59,8 +59,6 @@ export PATH=$PATH:$M2
 ## GO
 export GOPATH=$HOME/code/go
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
 
 ## CUSTOM FUNCTIONS
 
