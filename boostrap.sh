@@ -17,10 +17,7 @@ yes | pacman -S jdk11-openjdk nodejs npm go
 yes | pacman -S powerline-fonts ttf-fira-code
 
 # setup dev env
-mkdir -p $HOME/code
-mkdir -p $HOME/code/java
-mkdir -p $HOME/code/go
-mkdir -p $HOME/code/js
+mkdir -p $HOME/code $HOME/code/java $HOME/code/go $HOME/code/js 
 
 ## Config npm globals
 mkdir ~/.npm-global

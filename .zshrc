@@ -40,6 +40,7 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="chavita1386@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+git config --global credential.helper "cache --timeout 7200"
 
 ## NPM
 npm set init.author.email "chavita1386@gmail.com"
