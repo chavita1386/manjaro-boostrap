@@ -17,14 +17,21 @@ set cursorline
 set noshowmode
 " autoindent
 set autoindent
-
+" font
+set guifont=Fira\ Code\ weight=453\ 10
 " Leader key
 let mapleader = " "
 
+" Switching between files
+nnoremap <C-Tab> :bn<CR>
+nnoremap <C-S-Tab> :bp<CR>
 " Shortcuts nmap
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <C-w> :wq<CR>
+nmap <C-_> <Plug>NERDCommenterToggle
+" Shortcuts vmap
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " Shortcuts imap
 imap jj <Esc>
 
@@ -32,6 +39,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " IDE plugins
 Plug 'easymotion/vim-easymotion'
@@ -47,12 +55,22 @@ Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'preservim/nerdcommenter'
+" Languages
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 """ Theme custom
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+
+syntax on
+" set t_Co=256
+" colorscheme onehalfdark
+" let g:airline_theme='onehalfdark'
 
 """ Easymotion settings
 nmap <Leader>s <Plug>(easymotion-s2)
@@ -91,12 +109,30 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
-" Auto pairs
+""" Auto pairs
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
-" COC
+""" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+""" NERDCommenter
+filetype plugin on
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+
+""" COC
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 
 
