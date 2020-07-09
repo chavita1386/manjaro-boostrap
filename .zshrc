@@ -70,6 +70,9 @@ function ninit() {
 function nzsh() {
   nvim ~/.zshrc
 }
+function code() {
+  cd ~/.code
+}
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
