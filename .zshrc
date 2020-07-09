@@ -4,7 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="wuffers"
 plugins=(
     git
-    go
     golang 
     history
     history-substring-search
