@@ -65,6 +65,12 @@ export PATH=$GOPATH:$PATH
 ## CUSTOM FUNCTIONS
 
 # Create a new directory and enter it
+function ninit() {
+  nvim ~/.config/nvim/init.vim
+}
+function nzsh() {
+  nvim ~/.zshrc
+}
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
