@@ -23,8 +23,9 @@ set guifont=Fira\ Code\ weight=453\ 10
 let mapleader = " "
 
 " Switching between files
-nnoremap <C-Tab> :bn<CR>
-nnoremap <C-S-Tab> :bp<CR>
+nnoremap gp :bp<CR> 
+nnoremap gn :bn<CR>
+
 " Shortcuts nmap
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
@@ -57,6 +58,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'preservim/nerdcommenter'
+Plug 'reedes/vim-lexical'
 " Languages
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -134,5 +136,5 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-
-
+""" Vim Lexical
+let g:lexical#spelllang = ['en_us']
