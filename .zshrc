@@ -24,8 +24,13 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# set vim commands to zsh
+set -o vi
+bindkey -v
+
 ## ALIAS
 alias c="clear"
+alias n="nvim"
 alias ez="vi $HOME/.zshrc"
 # Share screen with VLC to Google Meet
 # [ 0,    0, 1920, 1080] for my entire left screen
@@ -45,11 +50,15 @@ git config --global credential.helper "cache --timeout 7200"
 npm set init.author.email "chavita1386@gmail.com"
 npm set init.author.name "Chavita1386"
 npm set init.license "MIT"
+#export PATH=$PATH:~/
+
+## File watcher
+#sysctl -p
 
 ##### EXPORT
 
 # Node.JS
-#export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:`yarn global bin`"
 
 ## JAVA / CLOJURE
 export JAVA_HOME=$(which java)
@@ -62,17 +71,28 @@ export PATH=$GOPATH:$PATH
 
 
 ## CUSTOM FUNCTIONS
-
-# Create a new directory and enter it
+# Cd to render
+function render() {
+	cd ~/code/searchrebel/dev/render
+}
 function ninit() {
   nvim ~/.config/nvim/init.vim
 }
 function nzsh() {
   nvim ~/.zshrc
 }
-function code() {
+function cdcode() {
   cd ~/code
 }
+# cd to exercism 
+function cdExercism() {
+  cd /home/chavita/snap/exercism/5/exercism/go/
+}
+# cd to go path
+function cdGo() {
+  cd /home/chavita/code/go/
+}
+# Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
@@ -99,3 +119,5 @@ function gcn {
     npm install;
 }
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
