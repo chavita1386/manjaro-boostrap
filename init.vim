@@ -17,13 +17,13 @@ set foldmethod=syntax
 set foldnestmax=30
 set nofoldenable
 set foldlevel=2
-" don't show insert mode
+set tabstop=2
 set noshowmode
-" autoindent
 set autoindent
-" font
 set guifont=Fira\ Code\ weight=453\ 10
-" Leader key
+" =========================
+"  		Leader key
+" =========================
 let mapleader = " "
 
 " Switching between files
@@ -65,12 +65,6 @@ Plug 'terryma/vim-multiple-cursors'
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
-" coc shortcuts
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<CR>"
-
 "------------- VIM TSX -------------
 Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
@@ -95,22 +89,41 @@ syntax on
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'
 
-""" Easymotion settings
+
+" =========================================
+" 				easymotion settings 
+" =========================================
+
 nmap <Leader>s <Plug>(easymotion-s2)
 
-""" Nerdtree settings
+
+" =========================================
+" 				nerdtree settings 
+" =========================================
+
 let NERDTreeQuitOnOpen=1
 nmap <Leader>b :NERDTreeFind<CR>
 
-""" Vim-Airline
+
+" =========================================
+" 				airline settings 
+" =========================================
+
 let g:airline#extensions#tabline#fnamemod = ':t' " Show onlye the name of the file
 
-""" IndentLine
+
+" =========================================
+" 				indentLine settings 
+" =========================================
+
 " No mostrar en ciertos tipos de buffers y archivos
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
-""" Fzf
+
+" =========================================
+" 				fzf settings 
+" =========================================
 " Execute command with alt-enter : Commands
 let g:fzf_commands_expect = 'alt-enter'
 " Save history search 
@@ -118,7 +131,10 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " Search file with Ctrl + p
 nnoremap <C-p> :Files<CR>
 
-""" Ctrlp
+
+" =========================================
+" 				ctrlp settings 
+" =========================================
 " Archivos ignorados
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
@@ -128,15 +144,22 @@ let g:ctrlp_custom_ignore = {
 " Ignorar archivos en .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" TSX 
+" =========================================
+" 				typescript settings (tsx)
+" =========================================
+let g:syntastic_typescript_tsc_fname = ''
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
-""" Auto pairs
+" =========================================
+" 				autopairs settings
+" =========================================
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
-""" Prettier
+" =========================================
+" 				prettier settings
+" =========================================
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#config#parser = ''
@@ -145,14 +168,31 @@ let g:prettier#config#use_tabs = 'false'
 
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 
-""" NERDCommenter
+" =========================================
+" 				nerdcommenter settings
+" =========================================
 filetype plugin on
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
 
-""" COC
+
+" =========================================
+" 				lexical settings
+" =========================================
+let g:lexical#spelllang = ['en_us']
+
+
+
+" =====================================
+" 					coc settings
+" =====================================
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-go']
+" shortcuts
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<CR>"
 "" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -170,7 +210,3 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-""" Vim Lexical
-let g:lexical#spelllang = ['en_us']
-""" Typescript config
-let g:syntastic_typescript_tsc_fname = ''
