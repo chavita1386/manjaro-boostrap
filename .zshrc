@@ -59,6 +59,7 @@ npm set init.license "MIT"
 
 # Node.JS
 export PATH="$PATH:`yarn global bin`"
+export PATH=~/.npm-global/bin:$PATH
 
 ## JAVA / CLOJURE
 export JAVA_HOME=$(which java)
@@ -86,11 +87,11 @@ function cdcode() {
 }
 # cd to exercism 
 function cdExercism() {
-  cd /home/chavita/snap/exercism/5/exercism/go/
+  cd ~/snap/exercism/5/exercism/go/
 }
 # cd to go path
 function cdGo() {
-  cd /home/chavita/code/go/
+  cd ~/code/go/src/github.com/chavita1386
 }
 # Create a new directory and enter it
 function mkd() {

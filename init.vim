@@ -21,6 +21,10 @@ set tabstop=2
 set noshowmode
 set autoindent
 set guifont=Fira\ Code\ weight=453\ 10
+syntax on
+" set t_Co=256
+
+
 " =========================
 "  		Leader key
 " =========================
@@ -33,12 +37,20 @@ nnoremap gn :bn<CR>
 " Shortcuts nmap
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <C-w> :wq<CR>
+" nmap <C-w> :wq<CR>
 nmap <C-_> <Plug>NERDCommenterToggle
 " Shortcuts vmap
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " Shortcuts imap
 imap jj <Esc>
+
+" Allow next buffer with ctrl tab
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" Allow to close buffer with ctrl w
+nmap <C-w> :bd<CR>
+
 
 " === VIM PLUGIN ======================
 call plug#begin('~/.local/share/nvim/plugged')
@@ -63,7 +75,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 
 "--------------- COC ----------------
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
 "------------- VIM TSX -------------
 Plug 'ianks/vim-tsx'
@@ -76,6 +88,8 @@ Plug 'reedes/vim-lexical'
 "------------ Languages ------------
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'fatih/vim-go'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 " === VIM PLUGIN END ===================
@@ -84,10 +98,7 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 
-syntax on
-" set t_Co=256
-" colorscheme onehalfdark
-" let g:airline_theme='onehalfdark'
+
 
 
 " =========================================
@@ -108,7 +119,7 @@ nmap <Leader>b :NERDTreeFind<CR>
 " =========================================
 " 				airline settings 
 " =========================================
-
+let g:airline#extensions#tabline#enabled = 1 " Show opened buffers like tabs
 let g:airline#extensions#tabline#fnamemod = ':t' " Show onlye the name of the file
 
 
@@ -141,8 +152,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-" Ignorar archivos en .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 
 " =========================================
 " 				typescript settings (tsx)
@@ -150,6 +160,20 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:syntastic_typescript_tsc_fname = ''
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
+" =========================================
+" 			vim-go golang	
+" =========================================
+let g:go_fmt_command = "goimports"    
+let g:go_auto_type_info = 1 
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_highlight_operators = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_variable_declarations = 1
 
 " =========================================
 " 				autopairs settings
@@ -188,19 +212,53 @@ let g:lexical#spelllang = ['en_us']
 " =====================================
 " 					coc settings
 " =====================================
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-go']
-" shortcuts
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <CR> pumvisible() ? "\<C-y><CR>" : "\<CR>"
-"" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename) 
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
@@ -210,3 +268,47 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
