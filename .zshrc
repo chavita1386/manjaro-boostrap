@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="wuffers"
+ZSH_THEME="agnoster"
 plugins=(
     git
     golang 
@@ -120,5 +120,9 @@ function gcn {
     npm install;
 }
 
+# Dir: current working directory
+prompt_dir() {
+	prompt_segment blue black '%c'
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
