@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME=""
 plugins=(
     git
     golang 
@@ -69,6 +69,21 @@ export PATH=$PATH:$M2
 ## GO
 export GOPATH=$HOME/code/go
 export PATH=$GOPATH:$PATH
+export PATH=$HOME/code/go/bin:$PATH
+
+## Pure theme
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+# change the path color
+zstyle :prompt:pure:path color '#96caf2'
+# change the color for both `prompt:success` and `prompt:error`
+# zstyle ':prompt:pure:prompt:*' color '#EBC5EE'
+zstyle :prompt:pure color '#EBC5EE'
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+prompt pure
 
 
 ## CUSTOM FUNCTIONS
