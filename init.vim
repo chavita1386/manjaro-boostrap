@@ -23,6 +23,7 @@ set autoindent
 set guifont=Fira\ Code\ weight=453\ 10
 syntax on
 set t_Co=256
+set wildmenu
 
 
 " =========================
