@@ -14,7 +14,11 @@ git clone https://github.com/djui/alias-tips.git $HOME/.oh-my-zsh/custom/plugins
 yes | pacman -S jdk11-openjdk nodejs npm go yarn
 
 # FONTS powerline and fira code
-yes | pacman -S powerline-fonts ttf-fira-code
+yes | pacman -S powerline-fonts ttf-fira-code noto-fonts-emoji
+
+# Spaceship-prompt
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # setup dev env
 mkdir -p $HOME/code $HOME/code/java $HOME/code/go $HOME/code/js 
