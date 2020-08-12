@@ -24,6 +24,9 @@ set guifont=Fira\ Code\ weight=453\ 10
 syntax on
 set t_Co=256
 set wildmenu
+set foldmethod=indent
+" Disable quote concealing in JSON files
+set conceallevel=1
 
 
 " =========================
@@ -58,6 +61,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "------------- Themes ----------------
 Plug 'morhetz/gruvbox'
+Plug 'jnurmine/zenburn'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 "------------- IDE plugins -----------
@@ -73,7 +77,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
-
+Plug 'mattn/emmet-vim'
+Plug 'turbio/bracey.vim'
+Plug 'elzr/vim-json'
+Plug 'tpope/vim-surround'
 
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -98,9 +105,6 @@ call plug#end()
 """ Theme custom
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
-
-
-
 
 " =========================================
 " 				easymotion settings 

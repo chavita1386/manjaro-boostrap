@@ -101,6 +101,18 @@ function nzsh() {
 function cdcode() {
   cd ~/code
 }
+function pushZsh() {
+	cp ~/.zshrc ~/Documents/manjaro-boostrap/.zshrc
+}
+function pullZsh() {
+	cp  ~/Documents/manjaro-boostrap/.zshrc ~/.zshrc
+}
+function pushInit() {
+	cp ~/.config/nvim/init.vim ~/Documents/manjaro-boostrap/init.vim
+}
+function pullInit() {
+	cp  ~/Documents/manjaro-boostrap/init.vim ~/.config/nvim/init.vim
+}
 # cd to exercism 
 function cdExercism() {
   cd ~/snap/exercism/5/exercism/go/
