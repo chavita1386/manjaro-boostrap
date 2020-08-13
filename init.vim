@@ -1,3 +1,4 @@
+syntax on
 " Python Config
 let g:python3_host_prog = '/usr/bin/python'
 set number
@@ -21,7 +22,6 @@ set tabstop=2
 set noshowmode
 set autoindent
 set guifont=Fira\ Code\ weight=453\ 10
-syntax on
 set t_Co=256
 set wildmenu
 set foldmethod=indent
@@ -105,6 +105,7 @@ call plug#end()
 """ Theme custom
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+set background=dark
 
 " =========================================
 " 				easymotion settings 
@@ -126,8 +127,7 @@ nmap <Leader>b :NERDTreeFind<CR>
 " =========================================
 let g:airline#extensions#tabline#enabled = 1 " Show opened buffers like tabs
 let g:airline#extensions#tabline#fnamemod = ':t' " Show onlye the name of the file
-
-
+let g:airline_theme = 'gruvbox'
 " =========================================
 " 				indentLine settings 
 " =========================================
