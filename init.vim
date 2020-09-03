@@ -26,7 +26,6 @@ set t_Co=256
 set wildmenu
 set foldmethod=indent
 " Disable quote concealing in JSON files
-set conceallevel=1
 
 
 " =========================
@@ -84,6 +83,7 @@ Plug 'tpope/vim-surround'
 
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-tailwindcss'
 " coc extensions
 "------------- VIM TSX -------------
 Plug 'ianks/vim-tsx'
@@ -106,6 +106,13 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 set background=dark
+
+
+" =========================================
+" 			 vim-json	
+" =========================================
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
 
 " =========================================
 " 				easymotion settings 
@@ -195,7 +202,7 @@ let g:prettier#config#parser = ''
 let g:prettier#config#tab_width = '2'
 let g:prettier#config#use_tabs = 'false'
 
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.html PrettierAsync
 
 " =========================================
 " 				nerdcommenter settings
