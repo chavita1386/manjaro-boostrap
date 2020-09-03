@@ -4,7 +4,7 @@
 sudo echo "ask for password before all the scripts"
 
 ## Install neccesary to clean installation
-yes | sudo pacman -S wget git vim neovim chromium opera zsh yakuake
+yes | sudo pacman -S wget git vim neovim chromium opera zsh flameshot gnome-terminal
 # install oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 # install oh-my-zsh plugins
