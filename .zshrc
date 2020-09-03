@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME=""
+ZSH_THEME="agnoster"
 plugins=(
     git
     golang 
@@ -52,6 +52,14 @@ npm set init.author.email "chavita1386@gmail.com"
 npm set init.author.name "Chavita1386"
 npm set init.license "MIT"
 #export PATH=$PATH:~/
+# NPM Global without sudo
+# mkdir "${HOME}/.npm-packages"
+# npm config set prefix "${HOME}/.npm-packages"
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 ## File watcher
 #sysctl -p
@@ -73,8 +81,8 @@ export PATH=$GOPATH:$PATH
 export PATH=$HOME/code/go/bin:$PATH
 
 ## Pure theme
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
+#fpath+=$HOME/.zsh/pure
+#autoload -U promptinit; promptinit
 # optionally define some options
 PURE_CMD_MAX_EXEC_TIME=10
 # change the path color
@@ -84,7 +92,7 @@ zstyle :prompt:pure:path color '#96caf2'
 zstyle :prompt:pure color '#EBC5EE'
 # turn on git stash status
 zstyle :prompt:pure:git:stash show yes
-prompt pure
+#prompt pure
 
 
 ## CUSTOM FUNCTIONS
@@ -150,7 +158,7 @@ function gcn {
 
 # Dir: current working directory
 prompt_dir() {
-	prompt_segment blue black '%c'
+	prompt_segment blue white '%c'
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
