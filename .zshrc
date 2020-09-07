@@ -158,7 +158,7 @@ function gcn {
 
 # Dir: current working directory
 prompt_dir() {
-	prompt_segment blue white '%c'
+	prompt_segment blue '#333' '%c'
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

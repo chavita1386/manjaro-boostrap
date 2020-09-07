@@ -90,7 +90,10 @@ Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 
 "------------- Prettier ------------
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', {
+\ 'do': 'yarn install',
+\ 'branch': 'release/0.x'
+\ }
 Plug 'reedes/vim-lexical'
 
 "------------ Languages ------------
@@ -106,6 +109,12 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 set background=dark
+
+
+" =========================================
+" 			 emmet	
+" =========================================
+let g:user_emmet_mode='a'
 
 
 " =========================================
@@ -198,7 +207,7 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 " =========================================
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
-let g:prettier#config#parser = ''
+let g:prettier#config#parser = 'babylon'
 let g:prettier#config#tab_width = '2'
 let g:prettier#config#use_tabs = 'false'
 
@@ -225,6 +234,11 @@ let g:lexical#spelllang = ['en_us']
 " 					coc settings
 " =====================================
 " TextEdit might fail if hidden is not set.
+
+
+" Extensions
+let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-json', 'coc-css', 'coc-html', 'coc-tailwindcss', 'coc-go']
+
 set hidden
 
 " Some servers have issues with backup files, see #649.
