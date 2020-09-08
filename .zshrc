@@ -25,8 +25,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # set vim commands to zsh
-set -o vi
-bindkey -v
+# set -o vi
+# bindkey -v
 
 ## ALIAS
 alias c="clear"
@@ -126,8 +126,16 @@ function cdExercism() {
   cd ~/snap/exercism/5/exercism/go/
 }
 # cd to go path
-function cdGo() {
+function cdgo() {
   cd ~/code/go/src/github.com/chavita1386
+}
+# cd to js folder projects
+function cdjs() {
+	cd ~/code/js
+}
+# cd to typescript folder
+function cdtypescript() {
+	cd ~/code/js/typescript/github.com/chavita1386
 }
 # Create a new directory and enter it
 function mkd() {
