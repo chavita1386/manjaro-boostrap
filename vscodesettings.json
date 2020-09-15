@@ -1,0 +1,33 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Gatito Theme",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.wordWrap": "on",
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["editor.action.formatDocument"]
+    }
+  ],
+  "editor.tabSize": 2,
+  "vim.leader": " ",
+  "go.formatTool": "goimports",
+  "workbench.editor.showTabs": true,
+  "window.menuBarVisibility": "toggle",
+  "extensions.ignoreRecommendations": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

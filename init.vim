@@ -21,7 +21,7 @@ set foldlevel=2
 set tabstop=2
 set noshowmode
 set autoindent
-set guifont=Fira\ Code\ weight=453\ 10
+" set guifont=Fira\ Code\ weight=453\ 10
 set t_Co=256
 set wildmenu
 set foldmethod=indent
@@ -84,6 +84,7 @@ Plug 'tpope/vim-surround'
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/coc-tailwindcss'
+Plug 'weirongxu/coc-explorer'
 " coc extensions
 "------------- VIM TSX -------------
 Plug 'ianks/vim-tsx'
@@ -238,6 +239,40 @@ let g:lexical#spelllang = ['en_us']
 
 " Extensions
 let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-json', 'coc-css', 'coc-html', 'coc-tailwindcss', 'coc-go']
+" Coc-explorer
+let g:coc_explorer_global_presets = {
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\			'file-root-template': '[icon] [title] [hidden & 1][root] [fullpath]',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+nmap <space>e :CocCommand explorer --preset floating<CR>
+
 
 set hidden
 

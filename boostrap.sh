@@ -4,7 +4,7 @@
 sudo echo "ask for password before all the scripts"
 
 ## Install neccesary to clean installation
-yes | sudo pacman -S wget git vim neovim chromium opera zsh flameshot gnome-terminal
+yes | sudo pacman -S wget git vim neovim chromium zsh flameshot gnome-terminal gnome-keyring
 # install oh-my-zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 # install oh-my-zsh plugins
@@ -21,7 +21,7 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/theme
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # setup dev env
-mkdir -p $HOME/code $HOME/code/java $HOME/code/go $HOME/code/js 
+mkdir -p $HOME/code $HOME/code/java $HOME/code/go $HOME/code/go/bin $HOME/code/go/src $HOME/code/go/pkg $HOME/code/js/react $HOME/code/js/typescript
 
 ## Config npm globals
 mkdir ~/.npm-global
