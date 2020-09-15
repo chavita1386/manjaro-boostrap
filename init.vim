@@ -40,6 +40,7 @@ nnoremap gn :bn<CR>
 " Shortcuts nmap
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>x :bd<CR>
 " nmap <C-w> :wq<CR>
 nmap <C-_> <Plug>NERDCommenterToggle
 " Shortcuts vmap
@@ -238,7 +239,7 @@ let g:lexical#spelllang = ['en_us']
 
 
 " Extensions
-let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-json', 'coc-css', 'coc-html', 'coc-tailwindcss', 'coc-go']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-emmet', 'coc-json', 'coc-css', 'coc-html', 'coc-tailwindcss', 'coc-go', 'coc-explorer']
 " Coc-explorer
 let g:coc_explorer_global_presets = {
 \   'tab': {
