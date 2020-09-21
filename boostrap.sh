@@ -13,6 +13,14 @@ git clone https://github.com/djui/alias-tips.git $HOME/.oh-my-zsh/custom/plugins
 ## Development languages
 yes | pacman -S jdk11-openjdk nodejs npm go yarn
 
+## Vim Plug Neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+## Neovim configs
+pip3 install pynvim
+npm install -g neovim
+gem install neovim
+
 # FONTS powerline and fira code
 yes | pacman -S powerline-fonts ttf-fira-code noto-fonts-emoji
 
@@ -23,6 +31,9 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 # setup dev env
 mkdir -p $HOME/code $HOME/code/java $HOME/code/go $HOME/code/go/bin $HOME/code/go/src $HOME/code/go/pkg $HOME/code/js/react $HOME/code/js/typescript
 
+# setup folders
+mkdir -p $HOME/.config/nvim/
+
 ## Config npm globals
 mkdir ~/.npm-global
 npm config set prefix "~/.npm-global"
@@ -32,4 +43,10 @@ source ~/.profile
 
 # set default github .zshrc file
 wget -O $HOME/.zshrc https://raw.githubusercontent.com/chavita1386/manjaro-boostrap/master/.zshrc
+
+# set default nvim config file
+wget -O $HOME/.config/nvim/init.vim https://raw.githubusercontent.com/chavita1386/manjaro-boostrap/master/init.vim
+
+# set modifier theme to oh my zsh
+cp $HOME/Documents/manjaro-boostrap/macovsky-ruby.zsh-theme $HOME/.oh-my-zsh/themes
  
