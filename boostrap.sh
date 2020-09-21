@@ -49,4 +49,8 @@ wget -O $HOME/.config/nvim/init.vim https://raw.githubusercontent.com/chavita138
 
 # set modifier theme to oh my zsh
 cp $HOME/Documents/manjaro-boostrap/macovsky-ruby.zsh-theme $HOME/.oh-my-zsh/themes
+
+## config to Sync VS Code
+sudo mkdir /usr/lib/x86_64-linux-gnu/
+sudo ln -s /usr/lib/gdk-pixbuf-2.0 /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0
  
