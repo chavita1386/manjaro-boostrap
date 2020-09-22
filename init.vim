@@ -26,7 +26,8 @@ set t_Co=256
 set wildmenu
 set foldmethod=indent
 " Disable quote concealing in JSON files
-
+set lcs+=space:·
+set invlist
 
 " =========================
 "  		Leader key
