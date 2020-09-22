@@ -32,6 +32,10 @@ set list lcs=trail:·,tab:»·
 " set listchars=tab:»·
 " set invlist
 
+let g:gruvbox_bold=0
+
+
+
 " =========================
 "       Leader key
 " =========================
@@ -63,7 +67,8 @@ nmap <C-w> :bd<CR>
 " === VIM PLUGIN ======================
 call plug#begin('~/.local/share/nvim/plugged')
 
-"------------- Themes ----------------
+"------------- themes ----------------
+Plug 'blueshirts/darcula'
 Plug 'morhetz/gruvbox'
 Plug 'jnurmine/zenburn'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
@@ -114,8 +119,8 @@ call plug#end()
 
 """ Theme custom
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
-set background=dark
+" let g:gruvbox_contrast_dark = "hard"
+" set background=dark
 
 
 " =========================================
@@ -149,7 +154,7 @@ nmap <Leader>b :NERDTreeFind<CR>
 " 				airline settings 
 " =========================================
 let g:airline#extensions#tabline#enabled = 1 " Show opened buffers like tabs
-let g:airline#extensions#tabline#fnamemod = ':t' " Show onlye the name of the file
+let g:airline#extensions#tabline#fnamemod = ':t2' " Show onlye the name of the file
 let g:airline_powerline_fonts=1
 let g:airline_theme = 'gruvbox'
 " let g:airline_left_sep = ''
