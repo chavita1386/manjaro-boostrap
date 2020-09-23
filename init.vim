@@ -23,6 +23,7 @@ set noshowmode
 set autoindent
 " always uses spaces instead of tab characters
 set expandtab
+set guifont=NotoSansMono\ Nerd\ Font\ 11
 " set guifont=Fira\ Code\ weight=453\ 10
 set t_Co=256
 set wildmenu
@@ -81,10 +82,12 @@ Plug 'dracula/dracula-theme'
 Plug 'jnurmine/zenburn'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'lokaltog/vim-powerline'
+Plug 'rakr/vim-one'
 
 "------------- IDE plugins -----------
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline' " Status bar
@@ -100,6 +103,7 @@ Plug 'turbio/bracey.vim'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
+Plug 'ryanoasis/vim-devicons'
 
 
 "--------------- COC ----------------
@@ -257,6 +261,16 @@ let g:NERDCompactSexyComs = 1
 let g:lexical#spelllang = ['en_us']
 
 
+" =========================================
+" 				tmux settings
+" =========================================
+
+let g:tmux_navigator_no_mappings = 1
+nmap <silent> <A-h> :TmuxNavigateLeft<cr>
+nmap <silent> <A-j> :TmuxNavigateDown<cr>
+nmap <silent> <A-k> :TmuxNavigateUp<cr>
+nmap <silent> <A-l> :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " =====================================
 " 					coc settings

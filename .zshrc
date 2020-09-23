@@ -55,7 +55,7 @@ npm set init.license "MIT"
 # NPM Global without sudo
 # mkdir "${HOME}/.npm-packages"
 # npm config set prefix "${HOME}/.npm-packages"
-NPM_PACKAGES="${HOME}/.npm-packages"
+NPM_PACKAGES="${HOME}/.npm-global"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
@@ -120,6 +120,12 @@ function pushInit() {
 }
 function pullInit() {
 	cp  ~/Documents/manjaro-boostrap/init.vim ~/.config/nvim/init.vim
+}
+function pushAlacritty() {
+	cp ~/.config/alacritty/alacritty.yml ~/Documents/manjaro-boostrap/alacritty.yml
+}
+function pullAlacritty() {
+	cp ~/Documents/manjaro-boostrap/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
 # cd to exercism 
 function cdExercism() {
