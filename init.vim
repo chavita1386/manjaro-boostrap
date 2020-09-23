@@ -21,6 +21,8 @@ set foldlevel=2
 set tabstop=2
 set noshowmode
 set autoindent
+" always uses spaces instead of tab characters
+set expandtab
 " set guifont=Fira\ Code\ weight=453\ 10
 set t_Co=256
 set wildmenu
@@ -31,9 +33,12 @@ set list
 set list lcs=trail:·,tab:»·
 " set listchars=tab:»·
 " set invlist
-
 let g:gruvbox_bold=0
+let g:gruvbox_termcolors=256
 
+" j/k will move virtual lines (lines that wrap)
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 
 " =========================
@@ -55,6 +60,7 @@ nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " Shortcuts imap
 imap jj <Esc>
+inoremap jk <Esc>
 
 " Allow next buffer with ctrl tab
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -68,8 +74,10 @@ nmap <C-w> :bd<CR>
 call plug#begin('~/.local/share/nvim/plugged')
 
 "------------- themes ----------------
-Plug 'blueshirts/darcula'
+" Plug 'blueshirts/darcula'
+Plug 'doums/darcula'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/dracula-theme'
 Plug 'jnurmine/zenburn'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'lokaltog/vim-powerline'
@@ -91,6 +99,8 @@ Plug 'mattn/emmet-vim'
 Plug 'turbio/bracey.vim'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-surround'
+Plug 'lilydjwg/colorizer'
+
 
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -146,6 +156,7 @@ nmap <Leader>s <Plug>(easymotion-s2)
 " 				nerdtree settings 
 " =========================================
 
+let g:NERDTreeIgnore = ['^node_modules$']
 let NERDTreeQuitOnOpen=1
 nmap <Leader>b :NERDTreeFind<CR>
 
