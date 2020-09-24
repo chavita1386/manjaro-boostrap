@@ -36,6 +36,8 @@ set list lcs=trail:·,tab:»·
 " set invlist
 let g:gruvbox_bold=0
 let g:gruvbox_termcolors=256
+" Disable Record Macros the shit
+map q <Nop>
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
