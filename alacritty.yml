@@ -1,3 +1,10 @@
+env:
+  TERM: xterm-256color
+
+dpi:
+  x: 96.0
+  y: 96.0
+
 window: 
   padding: 
     x: 3
@@ -5,14 +12,14 @@ window:
 
 font: 
   normal: 
-    family: 'Hack'
+    family: 'Liberation Mono'
     style: Regular
 
-  size: 11 
+  size: 10
 
   offset:
-    x: 0
-    y: 1 
+    x: 1 
+    y: 2 
 
   use_thin_strokes: true
 

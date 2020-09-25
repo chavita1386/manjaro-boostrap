@@ -116,10 +116,10 @@ function pullZsh() {
 	cp  ~/Documents/manjaro-boostrap/.zshrc ~/.zshrc
 }
 function pushInit() {
-	cp ~/.config/nvim/init.vim ~/Documents/manjaro-boostrap/init.vim
+	cp -R ~/.config/nvim ~/Documents/manjaro-boostrap/
 }
 function pullInit() {
-	cp  ~/Documents/manjaro-boostrap/init.vim ~/.config/nvim/init.vim
+	cp -R ~/Documents/manjaro-boostrap/nvim ~/.config/
 }
 function pushAlacritty() {
 	cp ~/.config/alacritty/alacritty.yml ~/Documents/manjaro-boostrap/alacritty.yml
