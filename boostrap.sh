@@ -22,7 +22,7 @@ npm install -g neovim
 gem install neovim
 
 # FONTS powerline and fira code
-yes | pacman -S powerline-fonts ttf-fira-code noto-fonts-emoji
+yes | pacman -S powerline-fonts ttf-fira-code noto-fonts-emoji powerline powerline powerline python-powerline powerline-fonts ttf-liberation nerd-fonts-noto-sans-mono ttf-nerd-fonts-symbols-mono
 
 # Spaceship-prompt
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -53,4 +53,4 @@ cp $HOME/Documents/manjaro-boostrap/macovsky-ruby.zsh-theme $HOME/.oh-my-zsh/the
 ## config to Sync VS Code
 sudo mkdir /usr/lib/x86_64-linux-gnu/
 sudo ln -s /usr/lib/gdk-pixbuf-2.0 /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0
- 
+
