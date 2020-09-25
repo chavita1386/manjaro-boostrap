@@ -5,27 +5,29 @@ dpi:
   x: 96.0
   y: 96.0
 
-window: 
-  padding: 
+window:
+  padding:
     x: 3
-    y: 3 
+    y: 3
 
-font: 
-  normal: 
+font:
+  normal:
     family: 'Liberation Mono'
     style: Regular
 
   size: 10
 
   offset:
-    x: 1 
-    y: 2 
+    x: 1
+    y: 2
 
   use_thin_strokes: true
 
 # Background opacity
-background_opacity: 1
+background_opacity: 0.97
 
+# Blur background
+background_blur: true
 
 render_time: true
 
@@ -34,16 +36,16 @@ colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#1c1c1c'
+    background: '#2c2c2c'
     # background: '#282828'
     # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2' 
+    foreground: '#ebdbb2'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x000000'
     cursor: '0xffffff'
- 
+
   # Normal colors
   normal:
     black:   '0x000000'
@@ -54,7 +56,7 @@ colors:
     magenta: '0xc397d8'
     cyan:    '0x70c0ba'
     white:   '0xffffff'
- 
+
   # Bright colors
   bright:
     black:   '0x666666'
@@ -65,7 +67,7 @@ colors:
     magenta: '0xb77ee0'
     cyan:    '0x54ced6'
     white:   '0xffffff'
- 
+
   # Dim colors (Optional)
   dim:
     black:   '0x333333'

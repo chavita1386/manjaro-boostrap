@@ -30,3 +30,6 @@ set autoindent
 set sw=2
 set conceallevel=0
 
+" automatically remove all trailing spaces
+autocmd BufWritePre * %s/\s\+$//e
+

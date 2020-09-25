@@ -121,6 +121,9 @@ function pushInit() {
 function pullInit() {
 	cp -R ~/Documents/manjaro-boostrap/nvim ~/.config/
 }
+function cdInit() {
+  cd ~/.config/nvim/
+}
 function pushAlacritty() {
 	cp ~/.config/alacritty/alacritty.yml ~/Documents/manjaro-boostrap/alacritty.yml
 }

@@ -5,6 +5,7 @@ syntax on
 let g:python3_host_prog = 'usr/bin/python'
 filetype plugin on
 
+
 " plugins
 source $HOME/.config/nvim/config/init.vimrc
 

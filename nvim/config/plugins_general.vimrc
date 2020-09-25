@@ -1,5 +1,5 @@
 " =========================================
-" 			plugins settings  
+" 			plugins settings
 " =========================================
 
 " =========
@@ -24,36 +24,40 @@ let g:user_emmet_mode='a'
 let g:vim_json_syntax_conceal = 0
 
 " ============
-"   nerdtree 
+"   nerdtree
 " ============
 let g:NERDTreeIgnore = ['^node_modules$']
 let NERDTreeQuitOnOpen=1
 
 
 " ============
-"   airline 
+"   airline
 " ============
 "let g:airline#extensions#tabline#enabled = 1 " Show opened buffers like tabs
 "let g:airline#extensions#tabline#fnamemod = ':t2' " Show onlye the name of the file
 
 
+" ============
+"   airline
+" ============
+
 " ===============
-"   indentline 
+"   indentline
 " ===============
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 
 " ===============
-"   fzf  
+"   fzf
 " ===============
 " Execute command with alt-enter : Commands
 let g:fzf_commands_expect = 'alt-enter'
-" Save history search 
+" Save history search
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " ===============
-"   typescript (tsx)  
+"   typescript (tsx)
 " ===============
 let g:syntastic_typescript_tsc_fname = ''
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
@@ -61,10 +65,10 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 
 " ====================
-"   vim-go (golang)  
+"   vim-go (golang)
 " ====================
-let g:go_fmt_command = "goimports"    
-let g:go_auto_type_info = 1 
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_highlight_operators = 1
@@ -75,14 +79,14 @@ let g:go_highlight_functions = 1
 let g:go_highlight_variable_declarations = 1
 
 " ====================
-"   autopairs   
+"   autopairs
 " ====================
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 
 " ====================
-"   prettier   
+"   prettier
 " ====================
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
@@ -93,7 +97,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 
 " ====================
-"   nerdcommenter   
+"   nerdcommenter
 " ====================
 filetype plugin on
 " Add spaces after comment delimiters by default
@@ -103,14 +107,14 @@ let g:NERDCompactSexyComs = 1
 
 
 " ====================
-"   lexical   
+"   lexical
 " ====================
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_us']
 
 
 " ====================
-"   tmux   
+"   tmux
 " ====================
 let g:tmux_navigator_no_mappings = 1
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>

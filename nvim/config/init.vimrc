@@ -1,5 +1,5 @@
 " =========================================
-" 			 plugins	
+" 			 plugins
 " =========================================
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -33,7 +33,6 @@ Plug 'elzr/vim-json'
 Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
 Plug 'ryanoasis/vim-devicons'
-
 
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
