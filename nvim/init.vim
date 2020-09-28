@@ -25,3 +25,4 @@ source $HOME/.config/nvim/config/mapping_control.vimrc
 " plugins settings
 
 source $HOME/.config/nvim/config/plugins_general.vimrc
+source $HOME/.config/nvim/config/coc_plugin.vimrc

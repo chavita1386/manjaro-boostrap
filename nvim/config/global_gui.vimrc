@@ -22,7 +22,7 @@ set cursorline
 
 " indent
 set tabstop=2
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 set expandtab
 set foldnestmax=30
