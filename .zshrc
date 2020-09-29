@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="alanpeabody"
 plugins=(
     git
-    golang 
+    golang
     history
     history-substring-search
     sudo
@@ -12,10 +12,10 @@ plugins=(
     lein
     node
     npm
-    jump    
+    jump
     mosh
     k
-    z    
+    z
     zsh-completions
     almostontop
     zsh-autosuggestions
@@ -101,7 +101,7 @@ function render() {
 	cd ~/code/searchrebel/dev/render
 }
 function ninit() {
-  nvim ~/.config/nvim/init.vim
+  cd ~/.config/nvim && nvim init.vim
 }
 function nzsh() {
   nvim ~/.zshrc
@@ -130,7 +130,7 @@ function pushAlacritty() {
 function pullAlacritty() {
 	cp ~/Documents/manjaro-boostrap/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
-# cd to exercism 
+# cd to exercism
 function cdExercism() {
   cd ~/snap/exercism/5/exercism/go/
 }
