@@ -13,6 +13,7 @@ set clipboard+=unnamed
 set noshowmode
 set splitright
 set t_Co=256
+set spell spelllang=en_us
 
 " lines
 set relativenumber

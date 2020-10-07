@@ -12,6 +12,8 @@ Plug 'jnurmine/zenburn'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'lokaltog/vim-powerline'
 Plug 'rakr/vim-one'
+Plug 'junegunn/seoul256.vim'
+Plug 'mhartington/oceanic-next'
 
 "------------- IDE plugins -----------
 Plug 'easymotion/vim-easymotion'
@@ -33,6 +35,7 @@ Plug 'elzr/vim-json'
 Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
 Plug 'ryanoasis/vim-devicons'
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 "--------------- COC ----------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -40,8 +43,10 @@ Plug 'iamcco/coc-tailwindcss'
 Plug 'weirongxu/coc-explorer'
 " coc extensions
 "------------- VIM TSX -------------
-Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
 
 "------------- Prettier ------------
 Plug 'prettier/vim-prettier', {

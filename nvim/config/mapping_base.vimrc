@@ -1,3 +1,6 @@
+" Easy access to the start of the line
+nmap 0 ^
+
 " disable record macros
 map q <Nop>
 
@@ -10,8 +13,9 @@ nnoremap gp :bp<CR>
 nnoremap gn :bn<CR>
 
 " escape easy
-imap jj <Esc>
-inoremap jk <Esc>
+imap jj <esc>
+imap jk <esc>
+imap kj <esc>
 
 " Allow next buffer with ctrl tab
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
