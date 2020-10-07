@@ -14,8 +14,6 @@ nnoremap gn :bn<CR>
 
 " escape easy
 imap jj <esc>
-imap jk <esc>
-imap kj <esc>
 
 " Allow next buffer with ctrl tab
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>

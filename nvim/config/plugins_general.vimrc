@@ -59,8 +59,8 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " ===============
 "   typescript (tsx)
 " ===============
-let g:syntastic_typescript_tsc_fname = ''
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
+" let g:syntastic_typescript_tsc_fname = ''
+" au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 
