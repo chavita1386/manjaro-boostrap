@@ -5,15 +5,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "------------- themes ----------------
 " Plug 'blueshirts/darcula'
-Plug 'doums/darcula'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/dracula-theme'
 Plug 'jnurmine/zenburn'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'lokaltog/vim-powerline'
-Plug 'rakr/vim-one'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/forest-night'
 
 "------------- IDE plugins -----------
 Plug 'easymotion/vim-easymotion'
