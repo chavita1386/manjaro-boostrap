@@ -12,7 +12,8 @@ window:
 
 font:
   normal:
-    family: 'Liberation Mono'
+    family: 'Fira Code Retina'
+    # family: 'Liberation Mono'
     style: Regular
 
   size: 10
@@ -24,7 +25,7 @@ font:
   use_thin_strokes: true
 
 # Background opacity
-background_opacity: 0.97
+background_opacity: 1
 
 # Blur background
 background_blur: true
@@ -36,7 +37,8 @@ colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#2c2c2c'
+    background: '#2b353b'
+    # background: '#2c2c2c'
     # background: '#282828'
     # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
