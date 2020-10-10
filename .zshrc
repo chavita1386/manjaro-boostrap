@@ -47,10 +47,6 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 git config --global credential.helper "cache --timeout 9200"
 git config --global core.editor "nvim"
 
-## NPM
-npm set init.author.email "chavita1386@gmail.com"
-npm set init.author.name "Chavita1386"
-npm set init.license "MIT"
 #export PATH=$PATH:~/
 # NPM Global without sudo
 # mkdir "${HOME}/.npm-packages"
@@ -60,6 +56,11 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+## NPM
+npm set init.author.email "chavita1386@gmail.com"
+npm set init.author.name "Chavita1386"
+npm set init.license "MIT"
+
 
 ## File watcher
 #sysctl -p
