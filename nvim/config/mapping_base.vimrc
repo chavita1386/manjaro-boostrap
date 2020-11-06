@@ -20,7 +20,7 @@ nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :wri
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
 " tmux
-nmap <silent> <Left> :TmuxNavigateLeft<cr>
-nmap <silent> <Down> :TmuxNavigateDown<cr>
-nmap <silent> <Up> :TmuxNavigateUp<cr>
-nmap <silent> <Right> :TmuxNavigateRight<cr>
+nmap <silent> <a-h> :TmuxNavigateLeft<cr>
+nmap <silent> <a-j> :TmuxNavigateDown<cr>
+nmap <silent> <a-k> :TmuxNavigateUp<cr>
+nmap <silent> <a-l> :TmuxNavigateRight<cr>

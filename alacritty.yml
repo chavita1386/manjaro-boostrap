@@ -82,3 +82,7 @@ colors:
     white:   '0xdddddd'
 
 live_config_reload: true
+
+key_bindings:
+
+  - { key: N,              mods: Control,            action: SpawnNewInstance }
